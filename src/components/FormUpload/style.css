@@ -1,0 +1,24 @@
+.form-uploader {
+  width: 100%;
+  height: 100%;
+}
+
+.form-uploader label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.form-uploader input {
+  display: none;
+}
+
+.form-uploader label:hover {
+  background-color: #dfe1e3ae;
+}
