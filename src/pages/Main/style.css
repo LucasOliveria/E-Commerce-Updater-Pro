@@ -1,7 +1,12 @@
-.container-main {
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container-set {
   display: flex;
   justify-content: space-between;
-  min-height: 100vh;
 }
 
 .container-uploader {
@@ -42,15 +47,16 @@
   border: 2px dashed whitesmoke;
 }
 
-.container-file {
+.container-file-name {
   align-self: center;
 }
 
-.container-file h4 {
+.container-file-name h4 {
   color: #FFFFFF;
 }
 
-.container-uploader button {
+.container-uploader button,
+.container-file button {
   align-self: center;
   width: 147px;
   height: 49px;
@@ -64,7 +70,8 @@
   transition: all 0.3s;
 }
 
-.container-uploader button:hover {
+.container-uploader button:hover,
+.container-file button:hover {
   background-color: #FFFFFF;
   border: 2px solid #2AB5DB;
   color: #2AB5DB;
@@ -83,4 +90,29 @@
 
 .container-image img {
   width: 300px;
+}
+
+.container-file {
+  display: flex;
+  flex-direction: column;
+  margin: 100px 0;
+  padding: 0 76px;
+}
+
+.content-file {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
+  gap: 25px;
+  max-height: 700px;
+  overflow: auto;
+}
+
+.content-not-file {
+  display: flex;
+  justify-content: center;
+}
+
+.content-not-file img {
+  width: 600px;
 }

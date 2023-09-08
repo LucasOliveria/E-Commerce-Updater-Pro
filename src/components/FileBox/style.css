@@ -1,0 +1,45 @@
+.file-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  width: 780px;
+  min-height: 223px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  filter: drop-shadow(0px 3px 12px rgba(0, 0, 0, 0.09));
+  padding: 15px;
+}
+
+.file-line img {
+  width: 130px;
+}
+
+.product-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.name-code-box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.product-info-box p {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.sales-price-color {
+  color: #f79131;
+}
+
+.new-price-color {
+  color: #0177FB;
+}
+
+.broken-rules-color {
+  color: rgb(229, 47, 47);
+}
