@@ -14,7 +14,6 @@ function FileBox({ product }) {
           <h3>{product.name}</h3>
           <h3>Código: {product.product_code}</h3>
         </div>
-
         <p>Preço atual: <span className='sales-price-color'>{product.sales_price}</span></p>
         <p>Novo Preço: <span className='new-price-color'>{product.new_price}</span></p>
         {product.broken_rules.length ?

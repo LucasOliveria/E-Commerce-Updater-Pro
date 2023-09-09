@@ -78,18 +78,15 @@ function Main() {
           <div className='container-insert-file'>
             <FormUpload fileInputRef={fileInputRef} setFile={setFile} />
           </div>
-
           <div className='container-file-name'>
             {file ? <h4>Arquivo: {file.name}</h4> : <h4>Nenhum arquivo selecionado</h4>}
           </div>
-
           <button onClick={handleUploadFormData}>VERIFICAR</button>
         </div>
         <div className='container-image'>
           <img src={Upload} alt="image upload" />
         </div>
       </div>
-
       <div ref={targetContainerFileRef} className='container-file'>
         {products.length ?
           <div className='content-file'>
@@ -108,4 +105,4 @@ function Main() {
   )
 }
 
-export default Main
+export default Main;
