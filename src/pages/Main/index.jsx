@@ -2,7 +2,7 @@ import { useRef, useState } from 'react'
 import { toast } from "react-toastify"
 import Cloud from '../../assets/cloud.gif'
 import Logo from '../../assets/logo.svg'
-import Upload from '../../assets/uploading.gif'
+import Upload from '../../assets/Uploading.gif'
 import FileBox from '../../components/FileBox'
 import FormUpload from '../../components/FormUpload'
 import api from '../../services/api'
