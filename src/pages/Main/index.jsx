@@ -23,6 +23,8 @@ function Main() {
     const formData = new FormData();
 
     formData.append('csv', file);
+
+    const id = toast.loading("Lendo o arquivo...");
     try {
       const response = await api.post('/file', formData, {
         headers: {
@@ -35,8 +37,10 @@ function Main() {
       if (fileInputRef.current) {
         fileInputRef.current.value = null
       }
+
+      toast.update(id, { render: "Tudo pronto", type: "success", isLoading: false, autoClose: 3000 })
     } catch (error) {
-      toast.info(error.response.data.mensagem);
+      toast.update(id, { render: error.response.data.mensagem, type: "info", isLoading: false, autoClose: 3000 })
     }
   }
 
@@ -51,6 +55,8 @@ function Main() {
     const formData = new FormData();
 
     formData.append('csv', file);
+
+    const id = toast.loading("Enviando o arquivo...");
     try {
       const response = await api.patch('/products', formData, {
         headers: {
@@ -61,9 +67,9 @@ function Main() {
       setProducts([]);
       setFile('');
       window.scrollTo({ top: targetContainerSetRef.current.offsetTop, behavior: 'smooth' });
-      toast.success(response.data.mensagem);
+      toast.update(id, { render: response.data.mensagem, type: "success", isLoading: false, autoClose: 3000 })
     } catch (error) {
-      toast.info(error.response.data.mensagem);
+      toast.update(id, { render: error.response.data.mensagem, type: "info", isLoading: false, autoClose: 3000 })
     }
   }
 
