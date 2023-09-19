@@ -40,6 +40,7 @@ function Main() {
 
       toast.update(id, { render: "Tudo pronto", type: "success", isLoading: false, autoClose: 3000 })
     } catch (error) {
+      console.log(error);
       toast.update(id, { render: error.response.data.mensagem, type: "info", isLoading: false, autoClose: 3000 })
     }
   }
@@ -69,6 +70,7 @@ function Main() {
       window.scrollTo({ top: targetContainerSetRef.current.offsetTop, behavior: 'smooth' });
       toast.update(id, { render: response.data.mensagem, type: "success", isLoading: false, autoClose: 3000 })
     } catch (error) {
+      console.log(error);
       toast.update(id, { render: error.response.data.mensagem, type: "info", isLoading: false, autoClose: 3000 })
     }
   }
