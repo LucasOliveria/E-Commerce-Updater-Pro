@@ -17,15 +17,12 @@ main {
   background-color: #3d78cb;
 }
 
-.container-uploader h1 {
-  color: #FFFFFF;
-}
-
 .content-logo-title {
   display: flex;
   align-items: center;
   gap: 10px;
   margin: 31px 0 0 46px;
+  color: #FFFFFF;
 }
 
 .content-logo-title img {

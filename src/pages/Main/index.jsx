@@ -40,7 +40,11 @@ function Main() {
 
       toast.update(id, { render: "Tudo pronto", type: "success", isLoading: false, autoClose: 3000 })
     } catch (error) {
-      toast.update(id, { render: error.response.data.mensagem, type: "info", isLoading: false, autoClose: 3000 })
+      if (error.response.data) {
+        return toast.update(id, { render: error.response.data.mensagem, type: "info", isLoading: false, autoClose: 3000 })
+      }
+
+      return toast.update(id, { render: "Erro interno do servido. Tente verificar o arquivo novamente.", type: "error", isLoading: false, autoClose: 3000 })
     }
   }
 
