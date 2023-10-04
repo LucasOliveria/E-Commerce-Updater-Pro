@@ -1,7 +1,7 @@
-import './style.css'
-import Logo from '../../assets/logo.svg'
 import { useNavigate } from "react-router-dom";
+import Logo from '../../assets/logo.svg';
 import api from '../../services/api';
+import './style.css';
 
 function SignIn() {
   const navigate = useNavigate()

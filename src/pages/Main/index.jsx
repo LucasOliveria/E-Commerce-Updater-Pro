@@ -39,6 +39,7 @@ function Main() {
       }
 
       toast.update(id, { render: "Tudo pronto", type: "success", isLoading: false, autoClose: 3000 })
+      setFile('');
     } catch (error) {
       if (error.response.data) {
         return toast.update(id, { render: error.response.data.mensagem, type: "info", isLoading: false, autoClose: 3000 })
