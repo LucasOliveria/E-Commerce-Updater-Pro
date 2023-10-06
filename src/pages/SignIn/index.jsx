@@ -18,7 +18,11 @@ function SignIn() {
       console.log(response.data);
       navigate("/main");
     } catch (error) {
-      console.log(error.response.data.mensagem);
+      if (error.response) {
+        console.log(error.response.data.mensagem);
+        return
+      }
+      console.log("Erro do servidor, tente novamente");
     }
   }
 

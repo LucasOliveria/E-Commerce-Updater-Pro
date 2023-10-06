@@ -38,14 +38,13 @@ function Main() {
         fileInputRef.current.value = null
       }
 
-      toast.update(id, { render: "Tudo pronto", type: "success", isLoading: false, autoClose: 3000 })
-      setFile('');
+      toast.update(id, { render: "Tudo pronto", type: "success", isLoading: false, autoClose: 3000 });
     } catch (error) {
-      if (error.response.data) {
+      if (error.response) {
         return toast.update(id, { render: error.response.data.mensagem, type: "info", isLoading: false, autoClose: 3000 })
       }
 
-      return toast.update(id, { render: "Erro interno do servido. Tente verificar o arquivo novamente.", type: "error", isLoading: false, autoClose: 3000 })
+      toast.update(id, { render: "Erro interno do servido. Tente verificar o arquivo novamente.", type: "error", isLoading: false, autoClose: 3000 })
     }
   }
 
