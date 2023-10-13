@@ -1,10 +1,12 @@
 import { useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { toast } from "react-toastify"
-import Cloud from '../../assets/cloud.gif'
-import Logo from '../../assets/logo.svg'
 import Upload from '../../assets/Uploading.gif'
+import Cloud from '../../assets/cloud.gif'
+import Exit from '../../assets/exit.svg'
 import FileBox from '../../components/FileBox'
 import FormUpload from '../../components/FormUpload'
+import HeaderLogo from '../../components/Logo'
 import api from '../../services/api'
 import './style.css'
 
@@ -14,6 +16,7 @@ function Main() {
   const fileInputRef = useRef(null);
   const targetContainerFileRef = useRef(null);
   const targetContainerSetRef = useRef(null);
+  const navigate = useNavigate()
 
   async function handleUploadFormData() {
     if (!file) {
@@ -41,10 +44,10 @@ function Main() {
       toast.update(id, { render: "Tudo pronto", type: "success", isLoading: false, autoClose: 3000 });
     } catch (error) {
       if (error.response) {
-        return toast.update(id, { render: error.response.data.mensagem, type: "info", isLoading: false, autoClose: 3000 })
+        return toast.update(id, { render: error.response.data.mensagem, type: "info", isLoading: false, autoClose: 3000 });
       }
 
-      toast.update(id, { render: "Erro interno do servido. Tente verificar o arquivo novamente.", type: "error", isLoading: false, autoClose: 3000 })
+      toast.update(id, { render: "Erro interno do servido. Insira o arquivo e tente novamente.", type: "error", isLoading: false, autoClose: 3000 });
     }
   }
 
@@ -71,20 +74,22 @@ function Main() {
       setProducts([]);
       setFile('');
       window.scrollTo({ top: targetContainerSetRef.current.offsetTop, behavior: 'smooth' });
-      toast.update(id, { render: response.data.mensagem, type: "success", isLoading: false, autoClose: 3000 })
+      toast.update(id, { render: response.data.mensagem, type: "success", isLoading: false, autoClose: 3000 });
     } catch (error) {
-      toast.update(id, { render: error.response.data.mensagem, type: "info", isLoading: false, autoClose: 3000 })
+      toast.update(id, { render: error.response.data.mensagem, type: "info", isLoading: false, autoClose: 3000 });
     }
+  }
+
+  function handleExit() {
+    localStorage.removeItem("token");
+    navigate("/");
   }
 
   return (
     <main>
       <div ref={targetContainerSetRef} className='container-set'>
         <div className='container-uploader'>
-          <div className='content-logo-title'>
-            <img src={Logo} alt="" />
-            <h1>Market Updater Pro</h1>
-          </div>
+          <HeaderLogo />
           <div className='container-insert-file'>
             <FormUpload fileInputRef={fileInputRef} setFile={setFile} />
           </div>
@@ -94,7 +99,8 @@ function Main() {
           <button onClick={handleUploadFormData}>VERIFICAR</button>
         </div>
         <div className='container-image'>
-          <img src={Upload} alt="image upload" />
+          <img src={Exit} alt="Exit" onClick={handleExit} />
+          <img src={Upload} alt="Image-upload" />
         </div>
       </div>
       <div ref={targetContainerFileRef} className='container-file'>

@@ -28,8 +28,9 @@
 }
 
 .form-sign-in input {
+  background-color: #ffffff;
   width: 100%;
-  height: 5rem;
+  height: 4.5rem;
   padding: 1rem;
   border-radius: 2rem;
   border: none;

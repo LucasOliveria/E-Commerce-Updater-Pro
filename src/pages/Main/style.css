@@ -17,22 +17,6 @@ main {
   background-color: #3d78cb;
 }
 
-.content-logo-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 31px 0 0 46px;
-  color: #FFFFFF;
-}
-
-.content-logo-title img {
-  width: 40px;
-}
-
-.content-logo-title h1 {
-  font-size: 2.5rem;
-}
-
 .container-insert-file {
   display: flex;
   flex-direction: column;
@@ -83,10 +67,24 @@ main {
   width: 40%;
   height: 600px;
   border-bottom-right-radius: 200px;
+  position: relative;
 }
 
-.container-image img {
+.container-image img[alt="Image-upload"] {
   width: 300px;
+}
+
+.container-image img[alt="Exit"] {
+  width: 4.2rem;
+  position: absolute;
+  top: 3.1rem;
+  right: 3rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.container-image img[alt="Exit"]:hover {
+  transform: scale(1.1);
 }
 
 .container-file {
