@@ -6,9 +6,9 @@ Esse projeto faz parte de um desafio de Desenvolvimento Full Stack. Tal desafio 
 
 O projeto conta com uma API desenvolvida com Express.js e um layout produzido em React.js. 
 
+Site do projeto: <a href="https://market-updater-pro.netlify.app/" target="_blank">Market Updater Pro</a> 
 
 ## Documentação da API:
-
 
 A documentação da API e seus códigos podem ser acessados por meio desse link: <a href="https://github.com/LucasOliveria/Api-E-Commerce-Updater-Pro" target="_blank">https://github.com/LucasOliveria/Api-E-Commerce-Updater-Pro</a>
 
